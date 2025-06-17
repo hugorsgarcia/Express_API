@@ -3,10 +3,11 @@ const router = express.Router()
 const Contatos = require('../models/Contato');
 const { default: mongoose } = require("mongoose");
 const sendResponse = require('../utils/responseHandler'); // exportado como SendResponse
+const basicAuth = require('../middlewares/basicAuth')
 
 
 // Listar contatos
-router.get('/', async (req, res) => {
+router.get('/', basicAuth, async (req, res) => {
     try {
         const dados = await Contatos.find();
 
