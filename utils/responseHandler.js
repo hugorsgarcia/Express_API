@@ -12,7 +12,7 @@
  */
 
 const sendResponse = (res, statusCode, alert, message, data = null) => {
-  // Monta o objeto de resposta no formato padrão.
+  // Monta o objeto de resposta no formato padrão//.
   const responseObject = {
     alert,
     message,
